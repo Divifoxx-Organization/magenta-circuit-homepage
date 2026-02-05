@@ -23,10 +23,16 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="px-6 py-24 bg-card">
-      <div className="max-w-6xl mx-auto">
+    <section id="how-it-works" className="relative px-6 py-28 overflow-hidden">
+      {/* Background */}
+      <div className="orb orb-accent w-[400px] h-[400px] top-1/2 left-0 -translate-y-1/2 opacity-20" />
+      
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="inline-flex items-center gap-2 glass-subtle rounded-full px-4 py-2 mb-6">
+            <span className="text-sm text-muted-foreground">Simple Process</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-5">
             How It Works
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -34,18 +40,26 @@ const HowItWorks = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative group">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-border to-transparent" />
+                <div className="hidden lg:block absolute top-12 left-full w-full h-px">
+                  <div className="h-full bg-gradient-to-r from-accent/50 via-accent/20 to-transparent" />
+                </div>
               )}
               
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-accent/30 bg-accent/5 mb-6">
-                  <span className="text-accent font-bold text-lg">{step.number}</span>
+              <div className="glass-card rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300">
+                {/* Step number with glow */}
+                <div className="relative mb-6">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent to-accent/60 flex items-center justify-center glow-accent-subtle">
+                    <span className="text-accent-foreground font-bold text-lg">{step.number}</span>
+                  </div>
+                  {/* Subtle ring */}
+                  <div className="absolute inset-0 w-14 h-14 rounded-full border border-accent/30 animate-pulse" />
                 </div>
+                
                 <h3 className="text-lg font-semibold text-foreground mb-3">
                   {step.title}
                 </h3>

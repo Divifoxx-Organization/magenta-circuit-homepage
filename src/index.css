@@ -1,53 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* MagentaCircuit Design System
-   Dark-themed, professional, tech-focused
-   Magenta accent on near-black background
+   Dark-themed with glassmorphism, layered greys, magenta accent
 */
 
 @layer base {
   :root {
-    /* Dark theme as default */
-    --background: 240 10% 4%;
+    /* Layered dark greys */
+    --background: 225 15% 6%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 6%;
+    /* Card surfaces - slightly lighter for depth */
+    --card: 225 15% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 6%;
+    --popover: 225 15% 10%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 240 10% 4%;
+    --primary-foreground: 225 15% 6%;
 
-    --secondary: 240 10% 12%;
+    /* Secondary - mid grey for layering */
+    --secondary: 225 12% 16%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 10% 12%;
-    --muted-foreground: 240 5% 55%;
+    /* Muted - for subtle elements */
+    --muted: 225 12% 14%;
+    --muted-foreground: 225 10% 55%;
 
-    /* Magenta accent - the signature color */
+    /* Magenta accent */
     --accent: 328 85% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 15%;
-    --input: 240 10% 15%;
+    /* Border with slight visibility */
+    --border: 225 15% 18%;
+    --input: 225 15% 18%;
     --ring: 328 85% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 240 10% 6%;
+    /* Glassmorphism specific */
+    --glass-bg: 225 15% 12%;
+    --glass-border: 225 15% 22%;
+    --glass-highlight: 0 0% 100%;
+
+    --sidebar-background: 225 15% 8%;
     --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 328 85% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent: 225 12% 16%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 240 10% 15%;
+    --sidebar-border: 225 15% 18%;
     --sidebar-ring: 328 85% 55%;
   }
 }
@@ -59,15 +69,141 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
 @layer utilities {
+  /* Grid pattern - more subtle */
   .bg-grid-pattern {
     background-image: 
-      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Glassmorphism card */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glass-bg) / 0.6) 0%,
+      hsl(var(--glass-bg) / 0.3) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.5);
+    box-shadow: 
+      0 8px 32px hsl(0 0% 0% / 0.3),
+      inset 0 1px 0 hsl(var(--glass-highlight) / 0.05);
+  }
+
+  .glass-subtle {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glass-bg) / 0.4) 0%,
+      hsl(var(--glass-bg) / 0.2) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+  }
+
+  .glass-card {
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card) / 0.8) 0%,
+      hsl(var(--card) / 0.5) 100%
+    );
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--glass-border) / 0.4);
+    box-shadow: 
+      0 4px 24px hsl(0 0% 0% / 0.25),
+      0 1px 2px hsl(0 0% 0% / 0.2),
+      inset 0 1px 0 hsl(var(--glass-highlight) / 0.03);
+  }
+
+  /* Glow effects */
+  .glow-accent {
+    box-shadow: 
+      0 0 20px hsl(var(--accent) / 0.3),
+      0 0 40px hsl(var(--accent) / 0.1);
+  }
+
+  .glow-accent-subtle {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.15);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--muted-foreground)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(330 90% 70%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient borders */
+  .border-gradient {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glass-border) / 0.6) 0%,
+      hsl(var(--glass-border) / 0.2) 50%,
+      hsl(var(--accent) / 0.3) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Accent top border for cards */
+  .accent-border-top {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .accent-border-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--accent)) 50%, transparent 100%);
+  }
+
+  /* Floating background orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .orb-accent {
+    background: hsl(var(--accent) / 0.15);
+  }
+
+  .orb-blue {
+    background: hsl(220 80% 50% / 0.1);
   }
 }
