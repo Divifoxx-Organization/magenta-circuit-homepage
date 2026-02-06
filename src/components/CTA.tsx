@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/MagneticButton";
 import { ArrowRight } from "lucide-react";
 
 const CTA = () => {
@@ -30,14 +30,15 @@ const CTA = () => {
               Start with a free consultation to discover what's possible for your business.
             </p>
             
-            <Button 
+            <MagneticButton 
               variant="accent" 
               size="lg" 
-              className="rounded-full glow-accent glow-accent-hover btn-premium group h-14 px-10 text-base font-medium"
+              magneticStrength={0.2}
+              className="rounded-full glow-accent btn-premium group h-14 px-10 text-base font-medium"
             >
               Get Started
               <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
+            </MagneticButton>
           </div>
         </div>
       </div>

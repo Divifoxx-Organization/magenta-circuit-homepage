@@ -6,10 +6,12 @@ import HowItWorks from "@/components/HowItWorks";
 import Benefits from "@/components/Benefits";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background cursor-none lg:cursor-none">
+      <CustomCursor />
       <Header />
       <main>
         <Hero />

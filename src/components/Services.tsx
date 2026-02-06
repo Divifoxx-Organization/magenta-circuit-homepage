@@ -1,4 +1,5 @@
 import { Users, Globe, MessageCircle, Workflow, Settings } from "lucide-react";
+import { SpotlightCard } from "@/components/SpotlightCard";
 
 const services = [
   {
@@ -72,7 +73,7 @@ const Services = () => {
 
 const ServiceCard = ({ service }: { service: typeof services[0] }) => {
   return (
-    <div className="premium-card rounded-2xl lg:rounded-3xl p-8 lg:p-10 group h-full">
+    <SpotlightCard className="premium-card rounded-2xl lg:rounded-3xl p-8 lg:p-10 group h-full">
       <div className="icon-container w-fit mb-6 group-hover:border-border/60 transition-colors duration-300">
         <service.icon className="w-6 h-6 text-accent" />
       </div>
@@ -82,7 +83,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
       <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
         {service.description}
       </p>
-    </div>
+    </SpotlightCard>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/MagneticButton";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -51,21 +51,23 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-          <Button 
+          <MagneticButton 
             variant="accent" 
             size="lg" 
-            className="rounded-full glow-accent glow-accent-hover btn-premium group h-14 px-8 text-base font-medium"
+            magneticStrength={0.2}
+            className="rounded-full glow-accent btn-premium group h-14 px-8 text-base font-medium"
           >
             Book a Free Automation Audit
             <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
-          </Button>
-          <Button 
+          </MagneticButton>
+          <MagneticButton 
             variant="outline" 
             size="lg" 
+            magneticStrength={0.15}
             className="rounded-full glass-subtle border-border/50 hover:border-border hover:bg-secondary/50 h-14 px-8 text-base font-medium transition-all duration-300"
           >
             Learn More
-          </Button>
+          </MagneticButton>
         </div>
         
         {/* Stats row */}

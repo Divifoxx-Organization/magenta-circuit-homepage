@@ -1,4 +1,5 @@
 import { Clock, Database, MessageSquare, RefreshCw } from "lucide-react";
+import { SpotlightCard } from "@/components/SpotlightCard";
 
 const problems = [
   {
@@ -46,7 +47,7 @@ const Problems = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {problems.map((problem, index) => (
-            <div
+            <SpotlightCard
               key={index}
               className="premium-card rounded-2xl lg:rounded-3xl p-8 lg:p-10 group"
             >
@@ -63,7 +64,7 @@ const Problems = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/MagneticButton";
 
 const Header = () => {
   return (
@@ -33,13 +33,14 @@ const Header = () => {
             </a>
           </div>
           
-          <Button 
+          <MagneticButton 
             variant="accent" 
             size="sm" 
+            magneticStrength={0.2}
             className="rounded-full glow-accent-subtle btn-premium h-10 px-5 font-medium"
           >
             Book a Call
-          </Button>
+          </MagneticButton>
         </nav>
       </div>
     </header>
