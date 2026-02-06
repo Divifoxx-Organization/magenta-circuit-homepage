@@ -5,71 +5,60 @@ const problems = [
     icon: MessageSquare,
     title: "Manual follow-ups",
     description: "Spending hours chasing leads and sending repetitive messages",
-    color: "328 85% 55%", // accent
   },
   {
     icon: Database,
     title: "Scattered data and tools",
     description: "Information spread across multiple platforms with no single source of truth",
-    color: "220 80% 55%", // blue
   },
   {
     icon: Clock,
     title: "Slow response times",
     description: "Leads going cold because responses take too long",
-    color: "170 70% 45%", // teal
   },
   {
     icon: RefreshCw,
     title: "Repetitive internal tasks",
     description: "Team members stuck doing the same manual work every day",
-    color: "280 70% 55%", // purple
   },
 ];
 
 const Problems = () => {
   return (
-    <section id="problems" className="relative px-6 py-28 overflow-hidden">
+    <section id="problems" className="section-container">
       {/* Background elements */}
-      <div className="orb orb-accent w-[400px] h-[400px] top-0 left-1/4 opacity-20" />
+      <div className="absolute inset-0 radial-gradient-subtle" />
+      <div className="orb orb-accent w-[500px] h-[500px] top-0 left-1/4 opacity-15" />
+      <div className="orb orb-blue w-[400px] h-[400px] bottom-0 right-1/4 opacity-10" />
       
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 glass-subtle rounded-full px-4 py-2 mb-6">
-            <span className="text-sm text-muted-foreground">Common Challenges</span>
+        <div className="text-center mb-20">
+          <div className="section-badge">
+            <span className="text-sm text-muted-foreground font-medium">Common Challenges</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-5">
+          <h2 className="section-title">
             Problems We Solve
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Common challenges that slow down growing businesses
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="group glass-card rounded-2xl p-7 hover:scale-[1.02] transition-all duration-300 accent-border-top"
-              style={{ '--accent-color': `hsl(${problem.color})` } as React.CSSProperties}
+              className="premium-card rounded-2xl lg:rounded-3xl p-8 lg:p-10 group"
             >
-              <div className="flex items-start gap-5">
-                <div 
-                  className="p-4 rounded-xl transition-all duration-300"
-                  style={{ 
-                    background: `linear-gradient(135deg, hsl(${problem.color} / 0.2) 0%, hsl(${problem.color} / 0.1) 100%)`,
-                  }}
-                >
-                  <problem.icon 
-                    className="w-6 h-6"
-                    style={{ color: `hsl(${problem.color})` }}
-                  />
+              <div className="flex items-start gap-6">
+                <div className="icon-container-accent shrink-0 group-hover:border-accent/40 transition-colors duration-300">
+                  <problem.icon className="w-6 h-6 text-accent" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                <div className="flex-1 pt-1">
+                  <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-3 tracking-tight">
                     {problem.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
                     {problem.description}
                   </p>
                 </div>
@@ -78,6 +67,9 @@ const Problems = () => {
           ))}
         </div>
       </div>
+      
+      {/* Section divider */}
+      <div className="absolute bottom-0 left-0 right-0 section-divider" />
     </section>
   );
 };
