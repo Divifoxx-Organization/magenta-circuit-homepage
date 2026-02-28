@@ -1,5 +1,6 @@
 
 
+
 # MagentaCircuit — Project Context for Developers
 
 ---
@@ -175,4 +176,3 @@ npm run test       # Vitest
 ```
 
 Path alias: `@/` → `src/`
-
