@@ -29,7 +29,7 @@ const Hero = () => {
         {/* Badge */}
         <div className="section-badge mb-10">
           <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="text-sm text-muted-foreground font-medium">AI & Automation Agency By Mayank</span>
+          <span className="text-sm text-muted-foreground font-medium">AI & Automation Agency By Mayank </span>
         </div>
         
         {/* Main headline with ambient glow */}
@@ -51,21 +51,21 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-          <MagneticButton 
-            variant="accent" 
-            size="lg" 
+          <MagneticButton
+            variant="accent"
+            size="lg"
             magneticStrength={0.2}
-            className="rounded-full glow-accent btn-premium group h-14 px-8 text-base font-medium"
-          >
+            className="rounded-full glow-accent btn-premium group h-14 px-8 text-base font-medium">
+
             Book a Free Automation Audit
             <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
           </MagneticButton>
-          <MagneticButton 
-            variant="outline" 
-            size="lg" 
+          <MagneticButton
+            variant="outline"
+            size="lg"
             magneticStrength={0.15}
-            className="rounded-full glass-subtle border-border/50 hover:border-border hover:bg-secondary/50 h-14 px-8 text-base font-medium transition-all duration-300"
-          >
+            className="rounded-full glass-subtle border-border/50 hover:border-border hover:bg-secondary/50 h-14 px-8 text-base font-medium transition-all duration-300">
+
             Learn More
           </MagneticButton>
         </div>
@@ -74,15 +74,15 @@ const Hero = () => {
         <div className="mt-24 lg:mt-32">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
             {[
-              { value: "50+", label: "Automations Built" },
-              { value: "200h+", label: "Saved Weekly" },
-              { value: "99%", label: "Client Satisfaction" },
-              { value: "24/7", label: "Systems Running" },
-            ].map((stat, index) => (
-              <div 
-                key={index} 
-                className="premium-card rounded-2xl p-6 lg:p-8 text-center group"
-              >
+            { value: "50+", label: "Automations Built" },
+            { value: "200h+", label: "Saved Weekly" },
+            { value: "99%", label: "Client Satisfaction" },
+            { value: "24/7", label: "Systems Running" }].
+            map((stat, index) =>
+            <div
+              key={index}
+              className="premium-card rounded-2xl p-6 lg:p-8 text-center group">
+
                 <div className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-2 tracking-tight">
                   {stat.value}
                 </div>
@@ -90,15 +90,15 @@ const Hero = () => {
                   {stat.label}
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
       
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
