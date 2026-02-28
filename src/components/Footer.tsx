@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="relative px-6 lg:px-8 py-16 border-t border-border/30">
@@ -16,24 +18,30 @@ const Footer = () => {
           
           {/* Links */}
           <div className="flex items-center gap-10">
-            <a 
-              href="#problems" 
+            <a
+              href="/#problems"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
             >
               Problems
             </a>
-            <a 
-              href="#services" 
+            <a
+              href="/#services"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
             >
               Services
             </a>
-            <a 
-              href="#how-it-works" 
+            <a
+              href="/#how-it-works"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
             >
               How It Works
             </a>
+            <Link
+              to="/about"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
+            >
+              About Us
+            </Link>
           </div>
           
           {/* Copyright */}
