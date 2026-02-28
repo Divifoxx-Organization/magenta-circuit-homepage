@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import Benefits from "@/components/Benefits";
 import CTA from "@/components/CTA";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -19,6 +20,7 @@ const Index = () => {
         <Services />
         <HowItWorks />
         <Benefits />
+        <Testimonials />
         <CTA />
       </main>
       <Footer />
