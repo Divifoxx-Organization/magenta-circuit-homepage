@@ -4,7 +4,7 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 const services = [
   {
     icon: Users,
-    title: "Lead Handling Automation",
+    title: "Leads Handling Automation",
     description: "Capture, qualify, and route leads automatically without manual intervention",
   },
   {
