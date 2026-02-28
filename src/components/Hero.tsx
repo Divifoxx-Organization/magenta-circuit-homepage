@@ -29,7 +29,7 @@ const Hero = () => {
         {/* Badge */}
         <div className="section-badge mb-10">
           <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="text-sm text-muted-foreground font-medium">AI & Automation Agency</span>
+          <span className="text-sm text-muted-foreground font-medium">AI & Automation Agency By Mayank</span>
         </div>
         
         {/* Main headline with ambient glow */}
